@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSE410</title>
+    <style>
+      body {
+        background-color: lightblue;
+      }
+      table {
+        border: 1px solid black;
+      }
+      th {
+        padding: 30px;
+      }
+      td {
+        padding: 10px;
+      }
+      h1,
+      h4 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Blockchain Project</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <h4>Register an account</h4>
+    <form id="contact-form method=" method="POST" action="/register">
+      Register From
+      <select class="registerFrom" data-style="btn-info" name="registerFrom">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to register from</option
+          >
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      Register to
+      <select class="registerTo" data-style="btn-info" name="registerTo">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to register</option
+          >
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      <input type="submit" value="submit" />
+    </form>
+    <hr />
+    <br />
+    <h4>Unregister an account</h4>
+    <form id="contact-form method=" method="POST" action="/unregister">
+      Unregister From
+      <select
+        class="unregisterFrom"
+        data-style="btn-info"
+        name="unregisterFrom"
+      >
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to unregister
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      <input type="submit" value="submit" />
+    </form>
+    <hr />
+    <br />
+    <h4>Deposit an account</h4>
+
+    <form id="contact-form method=" method="POST" action="/deposit">
+      Deposit amount:
+      <input type="text" name="depositTotalAmount" />
+      <select
+        class="depositAccount"
+        data-style="btn-info"
+        name="depositAccount"
+      >
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to deposit
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      <input type="submit" value="submit" />
+    </form>
+    <hr />
+    <br />
+    <h4>Get account balance</h4>
+
+    <form id="contact-form method=" method="POST" action="/getBalance">
+      Get account balance
+      <select class="getBalance" data-style="btn-info" name="getBalance">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to get balance
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      <input type="submit" value="submit" />
+    </form>
+    <hr />
+    <br />
+    <h4>Sell an item</h4>
+    <form id="contact-form method=" method="POST" action="/addBook">
+      Item Title:
+      <input type="text" name="title" />
+      Item Price:
+      <input type="text" name="price" />
+      Item Owners:
+      <select class="itemOwner" data-style="btn-info" name="itemOwner">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to get balance
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+
+      Image URL
+      <input type="text" name="imageurl" />
+
+      <input type="submit" value="submit" />
+    </form>
+
+    <hr />
+
+    <h4>Current selling items:</h4>
+
+    <table style="width:60%">
+      <tr>
+        <th>Item ID</th>
+        <th>Item title</th>
+        <th>Item Price</th>
+        <th>Item Status</th>
+        <th>Item Owner</th>
+        <th>Item Image</th>
+      </tr>
+      <tr>
+        <td name="titleName"></td>
+        <td name="priceName"></td>
+        <td name="statusName"></td>
+        <td name="OwnerName"></td>
+      </tr>
+    </table>
+
+    <form id="contact-form method=">
+      <div id="div1"></div>
+      <script>
+        $.ajax({
+          url: "/showTable",
+          complete: function(resultJSON) {
+            console.log(resultJSON.responseJSON);
+            var tbl = $("<table/>").attr("id", "mytable");
+            $("#div1").append(tbl);
+
+            for (var i = 0; i < resultJSON.responseJSON.length; i++) {
+              var tr = "<tr>";
+              var id =
+                "<td>" + "ID:" + resultJSON.responseJSON[i]["id"] + "</td>";
+              var title =
+                "<td>" +
+                "Title:" +
+                resultJSON.responseJSON[i]["title"] +
+                "</td>";
+              var price =
+                "<td>" + "$" + resultJSON.responseJSON[i]["price"] + "</td>";
+              var status =
+                "<td>" +
+                "Status:" +
+                resultJSON.responseJSON[i]["status"] +
+                "</td>";
+              var owner =
+                "<td>" +
+                "Seller:" +
+                resultJSON.responseJSON[i]["owner"] +
+                "</td>";
+
+              var imae =
+                "<td>" +
+                "<img src=" +
+                resultJSON.responseJSON[i]["image"] +
+                ' width="60" height="60">' +
+                "</td></tr>";
+              $("#mytable").append(
+                tr + id + title + price + status + owner + imae
+              );
+            }
+          }
+        });
+      </script>
+    </form>
+    <hr />
+    <br />
+    <h4>Buy an item</h4>
+
+    <form id="contact-form method=" method="POST" action="/buyItem">
+      ItemID <input type="text" name="itemid" /> Buyer ID
+      <select class="buyerID" data-style="btn-info" name="buyerID">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to get balance
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      SellerID:
+      <select class="sellerID" data-style="btn-info" name="sellerID">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to get balance
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      <input type="submit" value="submit" />
+    </form>
+    <hr />
+    <br />
+    <h4>Settle Payment</h4>
+    <form id="contact-form method=" method="POST" action="/settlePayment">
+      ItemID <input type="text" name="itemid" /> Buyer ID
+
+      <select class="buyerID" data-style="btn-info" name="buyerID">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to get balance
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      SellerID:
+      <select class="sellerID" data-style="btn-info" name="sellerID">
+        <optgroup label="Select Table">
+          <option name="" value="-1"
+            >Select address you want to get balance
+          </option>
+          <option
+            name="table1"
+            value="0xca35b7d915458ef540ade6068dfe2f44e8fa733c"
+            >0xca35b7d915458ef540ade6068dfe2f44e8fa733c</option
+          >
+          <option
+            name="table2"
+            value="0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
+            >0x14723a09acff6d2a60dcdf7aa4aff308fddc160c</option
+          >
+          <option
+            name="table3"
+            value="0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
+            >0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db</option
+          >
+          <option
+            name="table4"
+            value="0x583031d1113ad414f02576bd6afabfb302140225"
+            >0x583031d1113ad414f02576bd6afabfb302140225</option
+          >
+          <option
+            name="table5"
+            value="0xdd870fa1b7c4700f2bd7f44238821c26f7392148"
+            >0xdd870fa1b7c4700f2bd7f44238821c26f7392148</option
+          >
+        </optgroup>
+      </select>
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
